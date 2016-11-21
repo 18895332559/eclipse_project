@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.lw.file.bean">
+	
+	<class name="Account" table="account">
+		
+		<!-- 主键 ，映射-->
+		<id name="accountId" column="account_id">
+			<generator class="native"/>
+		</id>
+		<!-- 非主键，映射 -->
+		<property name="accountName" column="account_name"></property>
+		<property name="accountPsd" column="account_psd"></property>
+		<property name="isAdmin" column="is_admin" type="boolean"></property>
+	</class>
+
+</hibernate-mapping>
