@@ -6,7 +6,6 @@
 <hibernate-mapping package="com.lw.file.bean">
 	
 	<class name="Account" table="account">
-		
 		<!-- 主键 ，映射-->
 		<id name="accountId" column="account_id">
 			<generator class="native"/>
@@ -14,7 +13,7 @@
 		<!-- 非主键，映射 -->
 		<property name="accountName" column="account_name"></property>
 		<property name="accountPsd" column="account_psd"></property>
-		<property name="isAdmin" column="is_admin" type="boolean"></property>
+		<property name="isAdmin" column="is_admin" type="char"></property>
 	</class>
 
 </hibernate-mapping>
