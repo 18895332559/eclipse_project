@@ -5,7 +5,11 @@
 <struts>
     <package name="account" extends="struts-default" namespace="/">
     	<action name="login" class="com.lw.file.action.AccountAction" method="login">
-    		<result name="success">/WEB-INF/login.jsp</result>
+    		<result name="success">/WEB-INF/main/main.jsp</result>
+    		<result name="loginFailed">/account/login.jsp</result>
+    	</action>
+    	<action name="fileupload" class="com.lw.file.action.FileAction" method="upload">
+    		<result name="uploadSuccess">/WEB-INF/main/main.jsp</result>
     	</action>
     </package> 
 </struts>

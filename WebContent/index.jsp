@@ -10,7 +10,6 @@
 	<h1 align="center">文件管理系统</h1>
 	<div align="center">
 		<a href="${pageContext.request.contextPath }/account/login.jsp">登录</a>
-		<a href="#">注册</a>
 	</div>
 </body>
 </html>

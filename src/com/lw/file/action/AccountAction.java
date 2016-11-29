@@ -1,13 +1,16 @@
 package com.lw.file.action;
 
+import java.util.Map;
+
 import com.lw.file.bean.Account;
 import com.lw.file.service.AccountService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AccountAction extends ActionSupport {
 	//通过Spring IOC容器注入
 	private AccountService accountService ;
-
+	
 	private Account account = new Account() ;
 	
 	/**
@@ -16,8 +19,6 @@ public class AccountAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String register() throws Exception {
-		System.out.println("account------" + account);
-		System.out.println("accountService------" + accountService);
 		if(accountService != null){
 			accountService.register(account); 
 		}
@@ -30,12 +31,21 @@ public class AccountAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String login()throws Exception{
-		System.out.println("登录之前： " + account );
-		Account acc = accountService.login(account) ;
-		System.out.println("登录之后：login()-----------" + acc); 
-		return "success"  ;
+		Account loginAccount = accountService.login(account) ;
+		System.out.println("account---login:" + loginAccount );
+		//将查询到的数据存入request
+		ActionContext ac = ActionContext.getContext() ;
+		Map<String, Object> request = ac.getContextMap();
+		if(loginAccount == null ){// 登录失败
+//			Map<String, Object> session = ac.getSession();
+			request.put("msg", "登录失败");
+			return "loginFailed" ;
+		}
+		
+		request.put("account", loginAccount); 
+		return SUCCESS  ;
+		
 	}
-	
 	
 	public AccountService getAccountService() {
 		return accountService;

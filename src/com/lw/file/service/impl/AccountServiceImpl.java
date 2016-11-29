@@ -15,7 +15,6 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public Account register(Account account) {
-		System.out.println("accountDao------------"+accountDao);
 		return accountDao.register(account);
 	}
 	

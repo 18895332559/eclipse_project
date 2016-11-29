@@ -11,14 +11,14 @@
 	        <div>
 	            <label for="accountName">账号:</label>
 	            <!-- 采用 js验证 -->
-	            <input type="text" id="accountName" name="account.accountName" value="admin"  />
+	            <input type="text" id="accountName" name="account.accountName"   />
 	        </div>
 	        <div>
 	            <label for="accountPsd">密码:</label>
-	            <input type="text" id="accountPsd" name="account.accountPsd" value="admin"/>
+	            <input type="password" id="accountPsd" name="account.accountPsd" />
 	        </div>
-	
 	    </form>
+	  	  <!-- 回显错误信息 -->
 	    <div style="color:red">${requestScope.msg}</div>
 	</div>
 	<script type="text/javascript">

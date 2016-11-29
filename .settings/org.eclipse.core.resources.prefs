@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
 encoding//WebContent/account/register.jsp=UTF-8
+encoding//src/com/lw/file/bean/Ftp.java=UTF-8
+encoding//src/com/lw/file/utils/FtpUtil.java=UTF-8
